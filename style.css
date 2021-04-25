@@ -4,9 +4,83 @@
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
 
 }
 
+:root{
+    --font-primary: "Baloo Da 2" , serif;
+    --font-secundary: "Josefin Slab", serif;
+    --font-action: "Mulish", serif ; 
+}
+
+.hamburguer{
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    z-index: 100;
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    transition: .8s;
+}
+
+.show-menu .hamburguer{
+     right: 16rem;
+}
+
+
+.line{
+    width: 100%;
+    background-color: white;
+    height: .1rem;
+    box-shadow: 0.1rem 0.1rem 0.8px black;
+    transition: transform 1s;
+}
+
+.show-menu #line2{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show-menu #line1 {
+    transform: translate(.4rem, .4rem) rotate(45deg);
+}
+.show-menu #line3 {
+    transform: translate(.2rem, -.5rem) rotate(-45deg);
+}
+
+.hamburguer span{
+    position: absolute;
+    left: 3rem;
+    height: 2rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(153, 0, 153);
+    color: white;
+    font-family: var(--font-action);
+    opacity: 0;
+}
+
+.hamburguer span::before{
+    content: "";
+    position: absolute;
+    border-right: .5rem solid rgb(153, 0, 153);
+    border-top: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    left: -1rem;
+}
+
+.show-menu .hamburguer:hover span{
+    opacity: 1;
+}
 
 header{
     width: 100%;
@@ -47,7 +121,7 @@ header{
 .banner h1{
     color: white;
     font-size: 3.5rem;
-    font-family: "Baloo Da 2" , serif;
+    font-family: var(--font-primary);
     font-weight: 200;
     text-shadow: .2rem .3rem 2px rgba(0,0,0,0.4);
     line-height: 3.5rem;
@@ -57,7 +131,7 @@ header{
 }
 
 .banner p{
-    font-family: "Josefin Slab", serif;
+    font-family: var(--font-secundary);
     color: white;
     font-size: 2rem;
     text-shadow: .2rem .2rem  rgba(0,0,0,0.4);
@@ -68,7 +142,7 @@ header{
 }
 
 .banner button{
-    font-family: "Muli", serif ;
+    font-family: var(--font-action);
     color: white;
     text-transform: uppercase;
     letter-spacing: .1rem;
@@ -91,4 +165,67 @@ header{
         transform: translateY(0) rotateY(0);
         opacity: 1;
     }
+}
+
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: rgb(241, 241, 241);
+    position: fixed;
+    top: 0;
+    right: -20rem;
+    transition: all .5s;
+}
+
+.show-menu .sidebar{
+    right: 0;
+}
+
+.menu{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.menu-item{
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.menu-link{
+    font-family: var(--font-action);
+    font-size: 2rem;
+    color: gray;
+    transition: color 0.9s;
+
+}
+
+.menu-link:hover{
+    color: purple
+}
+
+.social-media{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social-media i{
+    background-color:rgb(114, 60, 114);
+    color: white;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 1s ;
+}
+
+.social-media i:hover{
+    background-color: rgb(204, 0, 204);
 }
