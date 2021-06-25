@@ -15,6 +15,9 @@
     --font-action: "Mulish", serif ; 
 }
 
+html {
+    scroll-behavior: smooth;
+}
 .hamburguer{
     width: 2rem;
     height: 2rem;
@@ -34,27 +37,26 @@
 }
 
 
-.line{
+.line {
     width: 100%;
-    background-color: white;
-    height: .1rem;
-    box-shadow: 0.1rem 0.1rem 0.8px black;
+    height: 0.1rem;
+    background-color: #fff;
+    box-shadow: 0.1rem 0.1rem 1px #000;
     transition: transform 1s;
-}
-
-.show-menu #line2{
-    opacity: 0;
-    visibility: hidden;
-}
+  }
 
 .show-menu #line1 {
-    transform: translate(.4rem, .4rem) rotate(45deg);
-}
-.show-menu #line3 {
-    transform: translate(.2rem, -.5rem) rotate(-45deg);
-}
+    transform: rotate(45deg) translate(0.3rem, 0.45rem);
+  }
+ .show-menu #line2 {
+    opacity: 0;
+    visibility: hidden;
+  }
+ .show-menu #line3 {
+    transform: rotate(-45deg) translate(0.3rem, -0.45rem);
+  }
 
-.hamburguer span{
+ .hamburguer span {
     position: absolute;
     left: 3rem;
     height: 2rem;
@@ -62,11 +64,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(153, 0, 153);
-    color: white;
+    background-color: #a044ff;
+    color: #ffffff;
     font-family: var(--font-action);
     opacity: 0;
-}
+  }
 
 .hamburguer span::before{
     content: "";
@@ -175,6 +177,7 @@ header{
     top: 0;
     right: -20rem;
     transition: all .5s;
+    z-index: 15
 }
 
 .show-menu .sidebar{
@@ -398,6 +401,7 @@ header{
     border-radius: .5rem;
     border: none;
     box-shadow: 0 0.1rem .8rem rgba(0,0,0,0.4);
+    cursor: pointer;
 }
 
 .card-info button {
@@ -574,4 +578,53 @@ header{
     padding: 1rem;
     cursor: pointer;
     grid-column: 2;
+}
+
+footer {
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(37, 37, 37);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.footer-content p{
+    font-family: var(--font-secundary);
+    color: #a7a7a7;
+    font-size: 1.2rem;
+}
+
+.social-list a {
+    margin: 0 2rem;
+    color: #a7a7a7;
+    font-size: 1.3rem;
+}
+
+.social-list ul {
+    display: flex;
+}
+
+#link-topo {
+    position: fixed;
+    left: 2rem;
+    bottom: 2rem;
+    width: 2rem;
+    height: 2rem;
+    background: #DA4453; 
+    background: -webkit-linear-gradient(to right, #89216B, #DA4453);
+    background: linear-gradient(to right, #89216B, #DA4453);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: .3rem;
+    box-shadow: 0 0.1rem 0.6rem black;
 }
